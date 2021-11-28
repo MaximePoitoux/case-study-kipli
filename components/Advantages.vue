@@ -1,7 +1,10 @@
 <template>
   <div class="advantages-wrapper">
-    <Advantage :advantages="advantages" />
-    <!-- <v-map></v-map> -->
+    <Advantage
+      v-for="(advantage, itemObjKey) in advantages"
+      :key="itemObjKey + 1"
+      :advantage="advantage"
+    />
   </div>
 </template>
 
@@ -39,4 +42,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.advantages-wrapper {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+</style>

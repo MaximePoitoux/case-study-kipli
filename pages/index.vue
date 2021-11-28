@@ -39,11 +39,78 @@
         class="customers__img"
       />
     </div>
+    <div class="our-range">
+      <h1 class="our-range__title">Notre gamme</h1>
+      <div class="our-range__cards">
+        <Card
+          v-for="(product, itemObjKey) in products"
+          :key="itemObjKey + 1"
+          :product="product"
+        />
+      </div>
+    </div>
+    <div class="natural-mattress">
+      <h1 class="natural-mattress__title">Le matelas en latex naturel</h1>
+      <div class="natural-mattress__img"></div>
+      <div class="natural-mattress__bloc-text">
+        <div class="natural-mattress__bloc-text-left">
+          <p>
+            Pour des nuits confortables mais avant tonaturelles, le matelas
+            latex naturel Kipli est votre meilleur allié. Pour des nuits
+            confortables mais avant tout naturelles, le matelas latex naturel
+            kipli est votre meilleur allié. Pour des nuits confortables mais
+            avant tout naturelles, le matelas latex naturel Kipli est votre
+            meilleur allié. Pour des nuits confortables mais avant tout
+          </p>
+        </div>
+        <div class="natural-mattress__bloc-text-right">
+          <p>
+            Pour des nuits confortables mais avant tonaturelles, le matelas
+            latex naturel Kipli est votre meilleur allié. Pour des nuits
+            confortables mais avant tout naturelles, le matelas latex naturel
+            kipli est votre meilleur allié. Pour des nuits confortables mais
+            avant tout naturelles, le matelas latex naturel Kipli est votre
+            meilleur allié. Pour des nuits confortables mais avant tout
+          </p>
+        </div>
+        <img
+          class="natural-mattress__icon"
+          src="../assets/images/picto_scroll.svg"
+          alt="scroll"
+        />
+      </div>
+      <div class="natural-mattress__slogan">
+        <img src="../assets/images/slogan.png" alt="slogan" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => ({
+    products: [
+      {
+        img: require('../assets/images/bedframe1.jpeg'),
+        title: 'Commode Picardie',
+        specificities: ['Bois de hêtre massif', 'Lattes flexibles ou rigides'],
+        price: '700€',
+      },
+      {
+        img: require('../assets/images/bedframe2.jpeg'),
+        title: 'Table de chevet Picardie',
+        specificities: ['Epicéa massif', 'Lattes rigides'],
+        price: '700€',
+      },
+      {
+        img: require('../assets/images/bedframe3.jpeg'),
+        title: 'Etagère Picardie',
+        specificities: ['Bois de hêtre massif', 'Lattes flexibles ou rigides'],
+        price: '700€',
+      },
+    ],
+  }),
+}
 </script>
 
 <style lang="scss">
@@ -153,6 +220,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 0 80px;
+  margin: 40px 0;
 
   &__title {
     font-size: 1.4em;
@@ -161,6 +229,76 @@ body {
 
   &__img {
     width: 90%;
+  }
+}
+.our-range {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+  &__title {
+    width: 90%;
+    margin-left: 5%;
+    font-size: 1.4em;
+  }
+  &__cards {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    width: 90%;
+  }
+}
+
+.natural-mattress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+  &__title {
+    width: 90%;
+    margin-left: 5%;
+    font-size: 1.4em;
+  }
+  &__img {
+    height: 300px;
+    width: 100%;
+    background-image: url('../assets/images/matelas_latex_naturel.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+  }
+  &__bloc-text {
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    div {
+      margin: 0 20px;
+    }
+    p {
+      text-align: center;
+      letter-spacing: 0.2px;
+      line-height: 1.2em;
+    }
+  }
+  &__icon {
+    cursor: pointer;
+    height: 40px;
+    position: absolute;
+    bottom: -15px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    transform: rotate(86deg);
+  }
+  &__slogan {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
   }
 }
 </style>

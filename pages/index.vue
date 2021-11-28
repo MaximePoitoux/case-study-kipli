@@ -4,9 +4,11 @@
     <div class="landing">
       <div class="landing__title">
         <p>Pour les professionnels <br />et l'hôtellerie</p>
+        <img src="../assets/images/arrow.svg" alt="arrow" />
       </div>
       <Form />
     </div>
+    <Advantages />
   </div>
 </template>
 
@@ -31,7 +33,10 @@ body {
 
 .landing {
   position: relative;
-  height: 650px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 700px;
   background-image: url(../assets/images/matelas-home.jpeg);
   background-attachment: fixed;
   background-position: center center;
@@ -45,6 +50,13 @@ body {
     font-size: 1.8em;
     p {
       text-align: center;
+      margin-bottom: 0;
+    }
+
+    img {
+      height: 50px;
+      transform: rotate(-35deg);
+      margin-left: 18px;
     }
   }
 }

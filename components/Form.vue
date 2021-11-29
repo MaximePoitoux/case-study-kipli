@@ -1,5 +1,5 @@
 <template>
-  <div class="form">
+  <form class="form" @submit.prevent="submitForm">
     <img class="form__logo" src="../assets/images/kipli_logo.svg" />
     <div class="form__bg">
       <div class="form__content">
@@ -13,20 +13,40 @@
         <div class="form__identity">
           <div class="flex">
             <label class="required"></label>
-            <input required="required" type="text" placeholder="Prénom" />
+            <input
+              v-model="name"
+              required="required"
+              type="text"
+              placeholder="Prénom"
+            />
           </div>
           <div class="flex">
             <label class="required"></label>
-            <input required="required" type="text" placeholder="Nom" />
+            <input
+              v-model="lastname"
+              required="required"
+              type="text"
+              placeholder="Nom"
+            />
           </div>
         </div>
         <div class="flex">
           <label class="required"></label>
-          <input required="required" type="email" placeholder="Email" />
+          <input
+            v-model="email"
+            required="required"
+            type="email"
+            placeholder="Email"
+          />
         </div>
         <div class="flex">
           <label class="required"></label>
-          <input required="required" type="tel" placeholder="Téléphone" />
+          <input
+            v-model="tel"
+            required="required"
+            type="tel"
+            placeholder="Téléphone"
+          />
         </div>
         <div class="flex">
           <label class="required"></label>
@@ -38,7 +58,7 @@
         </div>
         <div class="flex">
           <label class="required hidden"></label>
-          <textarea type="text" placeholder="Votre message" />
+          <textarea v-model="message" type="text" placeholder="Votre message" />
         </div>
         <div class="flex">
           <label class="required hidden"></label>
@@ -47,11 +67,40 @@
         <p class="form__info">Nous vous répondrons sous 48h</p>
       </div>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
-export default {}
+import useValidate from '@vuelidate/core'
+import { required, email, minLength } from '@vuelidate/validators'
+export default {
+  data() {
+    return {
+      v$: useValidate(),
+      name: '',
+      lastname: '',
+      email: '',
+      tel: '',
+      message: '',
+      submitted: false,
+    }
+  },
+  validations() {
+    return {
+      name: { required, minLength: minLength(3) },
+      lastname: { required, minLength: minLength(3) },
+      email: { required, email },
+      tel: { required },
+      message: {},
+    }
+  },
+  methods: {
+    submitForm() {
+      // console.log(this.v$)
+      this.submitted = true
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

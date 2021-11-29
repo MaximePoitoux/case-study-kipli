@@ -268,6 +268,7 @@ body {
     width: 90%;
   }
 }
+
 .our-range {
   display: flex;
   flex-direction: column;

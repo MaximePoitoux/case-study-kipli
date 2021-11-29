@@ -8,7 +8,13 @@
       </div>
       <Form />
     </div>
-    <Advantages />
+    <div class="advantages">
+      <Advantage
+        v-for="(advantage, itemObjKey) in advantages"
+        :key="itemObjKey + 1"
+        :advantage="advantage"
+      />
+    </div>
     <div class="product-responsibility">
       <img
         src="../assets/images/leaf1.svg"
@@ -23,7 +29,11 @@
           alternative saine et durable à vos hôtes en adoptant la literie Kipli
           !
         </p>
-        <button class="product-responsibility__btn">Obtenir un devis</button>
+        <Button
+          class="product-responsibility__btn"
+          type="button"
+          text="Obtenir un devis"
+        />
       </div>
       <img
         src="../assets/images/leaf2.svg"
@@ -89,6 +99,33 @@
 <script>
 export default {
   data: () => ({
+    advantages: [
+      {
+        title: 'Résilience et maintien',
+        img: require('../assets/images/advantage1.svg'),
+        desc: "Nos matelas s'adaptent au dormeur et non l'inverse",
+      },
+      {
+        title: 'Matières naturelles',
+        img: require('../assets/images/advantage2.svg'),
+        desc: 'Nos matelas sont extrêments respirants, déhoussables, anti acariens et antibactériens',
+      },
+      {
+        title: 'Economiques et écologique',
+        img: require('../assets/images/advantage3.svg'),
+        desc: 'Des coûts optimisés grâce à une durée de vie double',
+      },
+      {
+        title: 'Prix réduits',
+        img: require('../assets/images/advantage4.svg'),
+        desc: 'Des tarifs professionnels avantageux',
+      },
+      {
+        title: 'Un chargé de compte dédié',
+        img: require('../assets/images/advantage5.svg'),
+        desc: 'Un accompagnement marketing sur-mesure',
+      },
+    ],
     products: [
       {
         img: require('../assets/images/bedframe1.jpeg'),
@@ -158,6 +195,14 @@ body {
   }
 }
 
+.advantages {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
 .product-responsibility {
   position: relative;
   display: flex;
@@ -203,14 +248,6 @@ body {
   }
 
   &__btn {
-    cursor: pointer;
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 1em;
-    background-color: #b85e4c;
-    color: white;
-    border: none;
-    margin-top: 20px;
     width: 35%;
   }
 }

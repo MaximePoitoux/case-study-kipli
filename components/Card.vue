@@ -26,7 +26,9 @@
       >
         <li class="card__specificity">{{ specificity }}</li>
       </ul>
-      <p class="card__price">À partir de {{ product.price }}</p>
+      <p class="card__price">
+        <span class="card__price-small">À partir de</span> {{ product.price }}
+      </p>
     </div>
   </div>
 </template>
@@ -66,20 +68,28 @@ export default {
     font-weight: bold;
   }
 
-  &__icons-list {
-  }
-
   &__icon {
     height: 25px;
   }
 
   &__specificities {
-    padding: 0 0 0 10px;
+    padding: 0;
   }
 
   &__specificity {
-    list-style-image: url('../assets/images/picto_validate.svg');
-    letter-spacing: 0.2px;
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__specificity:before {
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-image: url('../assets/images/picto_validate.svg');
+    background-repeat: no-repeat;
+    margin-right: 10px;
   }
 
   &__img {
@@ -96,6 +106,9 @@ export default {
   &__price {
     color: #6fd1cb;
     text-align: right;
+    &-small {
+      font-size: 0.7em;
+    }
   }
 }
 </style>

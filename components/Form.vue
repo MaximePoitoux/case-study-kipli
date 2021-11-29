@@ -42,7 +42,7 @@
         </div>
         <div class="flex">
           <label class="required hidden"></label>
-          <button class="form__btn" type="submit">Envoyer ma demande</button>
+          <Button class="form__btn" type="submit" text="Envoyer ma demande" />
         </div>
         <p class="form__info">Nous vous répondrons sous 48h</p>
       </div>
@@ -158,13 +158,6 @@ export default {}
     }
 
     .form__btn {
-      cursor: pointer;
-      margin-top: 10px;
-      padding: 10px;
-      font-size: 1em;
-      background-color: #b85e4c;
-      color: white;
-      border: none;
       width: 100%;
     }
 

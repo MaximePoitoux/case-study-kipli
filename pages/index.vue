@@ -275,7 +275,21 @@ body {
     justify-content: space-between;
     margin-top: 40px;
     div {
+      position: relative;
       margin: 0 20px;
+      &:after {
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        content: '';
+        background: linear-gradient(
+          to top,
+          rgba(255, 255, 255, 1) 5%,
+          rgba(255, 255, 255, 0) 80%
+        );
+        pointer-events: none;
+      }
     }
     p {
       text-align: center;

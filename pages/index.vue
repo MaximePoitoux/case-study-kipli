@@ -303,6 +303,9 @@ body {
     background-image: url('../assets/images/matelas_latex_naturel.png');
     background-position: center;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-repeat: no-repeat;
     margin-top: 40px;
   }

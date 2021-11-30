@@ -362,7 +362,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     background-size: contain;
-    background-repeat: initial;
+    /* background-repeat: initial; */
 
     &__title {
       position: static;

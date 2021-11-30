@@ -217,4 +217,11 @@ export default {
     }
   }
 }
+
+@media only screen and (max-width: 450px) {
+  .form {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 </style>

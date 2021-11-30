@@ -353,4 +353,100 @@ body {
     margin-top: 40px;
   }
 }
+
+@media only screen and (max-width: 450px) {
+  .landing {
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__title {
+      position: static;
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .advantages {
+    flex-direction: column;
+    width: 100%;
+
+    .advantage {
+      width: 100%;
+      /* margin: 20px 0; */
+
+      &__desc {
+        width: 70%;
+        height: auto;
+        border-bottom: 1px solid #305157;
+        padding: 0 0 45px 0;
+      }
+    }
+  }
+
+  .product-responsibility {
+    &__leaf1 {
+      height: 55px;
+    }
+    &__leaf2 {
+      height: 130px;
+    }
+
+    &__wrapper {
+      width: 80%;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__desc {
+      margin-top: 55px;
+    }
+
+    &__btn {
+      width: 100%;
+    }
+  }
+
+  .customers {
+    padding: 0;
+  }
+
+  .our-range {
+    &__title {
+      text-align: center;
+      margin-left: 0;
+    }
+    &__cards {
+      flex-direction: column;
+    }
+  }
+
+  .natural-mattress {
+    &__title {
+      text-align: center;
+      margin-left: 0;
+    }
+
+    &__img {
+      height: 100px;
+      background-size: contain;
+      background-position: initial;
+    }
+
+    &__bloc-text {
+      width: 95%;
+      margin-top: 0;
+    }
+
+    &__slogan {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
 </style>

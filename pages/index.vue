@@ -361,8 +361,7 @@ body {
   .landing {
     flex-direction: column;
     justify-content: space-between;
-    background-size: contain;
-    /* background-repeat: initial; */
+    background-image: none;
 
     &__title {
       position: static;

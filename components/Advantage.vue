@@ -40,4 +40,17 @@ export default {
     width: 80%;
   }
 }
+
+@media only screen and (max-width: 450px) {
+  .advantage {
+    width: 100%;
+
+    &__desc {
+      width: 70%;
+      height: auto;
+      border-bottom: 1px solid #305157;
+      padding: 0 0 45px 0;
+    }
+  }
+}
 </style>

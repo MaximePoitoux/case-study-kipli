@@ -370,18 +370,6 @@ body {
   .advantages {
     flex-direction: column;
     width: 100%;
-
-    .advantage {
-      width: 100%;
-      /* margin: 20px 0; */
-
-      &__desc {
-        width: 70%;
-        height: auto;
-        border-bottom: 1px solid #305157;
-        padding: 0 0 45px 0;
-      }
-    }
   }
 
   .product-responsibility {
